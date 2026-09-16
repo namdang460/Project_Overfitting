@@ -27,13 +27,13 @@ preprocessor = ColumnTransformer(
     remainder="passthrough"
 )
 
-# Overfitting.
+# Xu ly Overfitting.
 model = Pipeline([
     ("preprocessor", preprocessor),
     ("regressor", DecisionTreeRegressor(
-        max_depth=None,
-        min_samples_split=2,
-        min_samples_leaf=1,
+        max_depth=8,
+        min_samples_split=20,
+        min_samples_leaf=10,
         random_state=42
     ))
 ])
